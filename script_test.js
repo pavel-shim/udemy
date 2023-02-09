@@ -1,63 +1,81 @@
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
 
-// for (let i = 0; i < 2; i++)   {
-//     const a = prompt('Один из последних просмотренных фильмов?', ''),
-//           b = prompt('На сколько оцените его?', '');
-//           personalMovieDB.movies[a] = b;  
-//     if (a != null && b !=  null && a != '' && b != '' && a.length < 50 ) {
-//             personalMovieDB.movies[a] = b;
-//             console.log('done');
-//     } else {
-//             console.log('error');
-//             i--;
-//     }  
-// } 
 
-// let i = 0; 
-//     while (i < 2) {
-//     const a = prompt('Один из последних просмотренных фильмов?', ''),
-//           b = prompt('На сколько оцените его?', '');
-//           personalMovieDB.movies[a] = b;  
-//     if (a != null && b !=  null && a != '' && b != '' && a.length < 50 ) {
-//             personalMovieDB.movies[a] = b;
-//             console.log('done');
-//     } else {
-//             console.log('error');
-//             i--;
-//     }  
-//     i++;
-// } 
-
-for (let i = 0; i < 2; i++)   {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
-          personalMovieDB.movies[a] = b;  
-    if (a == null || b ==  null || a == '' || b == '' || a.length > 50 ) {
-            console.log('error');
-            i--;
-    } else {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-    }  
-} 
-
-if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log("Вы классический зритель");
-} else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман");
-} else {
-    console.log("Произошла ошибка");
+function getMathResult(base, repit) {
+  if ((typeof repit) != 'number' || repit <= 0) {
+    console.log(base);
+    console.log(typeof base);
+    return base;
+  } else {
+    let result = '';
+    for (let i = 1; i <= repit; i++) {
+      result = result + `${base * i}`;
+      if (i === repit) {
+        result = result + "";
+      } else {
+        result = result + "---";
+      }
+    }
+     console.log(result);
+     console.log(typeof result);
+     return result;
+  }
 }
 
+getMathResult(5, 10);
 
-console.log(personalMovieDB);
+function getMathResult(num, times) {
+  if (typeof(times) !== 'number' || times <= 0) {
+      return num;
+  }
+
+  let str = '';
+
+  for (let i = 1; i <= times; i++) {
+      if (i === times) {
+          str += `${num * i}`;
+          // Тут без черточек в конце
+      } else {
+          str += `${num * i}---`;
+          // Это тоже самое, что и
+          // str = str + num * i + "---"
+      }
+  }
+
+  return str;
+}
+
+getMathResult(10, 5);
+
+
+
+
+
+
+
+
+function promotion(result) {
+  console.log(result * discount)
+}
+
+const res = convert(500, usdCurr);
+promotion(res);
+
+getMathResult(5, 3);
+
+
+//2.
+function test() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return
+  }
+  console.log("Done");
+}
+
+test();
+
+
+//3. функция всегда что-то возвращает. в данном случе андефайнд
+function doNothing() {};
+console.log(doNothing() === undefined);

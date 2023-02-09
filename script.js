@@ -228,16 +228,44 @@ const personalMovieDB = {
     privat: false
 };
 
+// for (let i = 0; i < 2; i++)   {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
+//           personalMovieDB.movies[a] = b;  
+//     if (a != null && b !=  null && a != '' && b != '' && a.length < 50 ) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//     } else {
+//             console.log('error');
+//             i--;
+//     }  
+// } 
+
+// let i = 0; 
+//     while (i < 2) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
+//           personalMovieDB.movies[a] = b;  
+//     if (a != null && b !=  null && a != '' && b != '' && a.length < 50 ) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//     } else {
+//             console.log('error');
+//             i--;
+//     }  
+//     i++;
+// } 
+
 for (let i = 0; i < 2; i++)   {
     const a = prompt('Один из последних просмотренных фильмов?', ''),
           b = prompt('На сколько оцените его?', '');
           personalMovieDB.movies[a] = b;  
-    if (a != null && b !=  null && a != '' && b != '' && a.length < 50 ) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-    } else {
+    if (a == null || b ==  null || a == '' || b == '' || a.length > 50 ) {
             console.log('error');
             i--;
+    } else {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
     }  
 } 
 
@@ -254,6 +282,7 @@ if (personalMovieDB.count < 10) {
 
 console.log(personalMovieDB);
 
+<<<<<<< HEAD
 
 //lesson 25
 
@@ -270,3 +299,78 @@ const test = "12.2px"
 console.log(parseInt(test));
 
 
+=======
+//lesson 25
+//1.
+const usdCurr = 28;
+const discount = 0.5;
+
+function convert(amount, curr) {
+  return curr * amount;
+}
+
+function promotion(result) {
+  console.log(result * discount)
+}
+
+const res = convert(500, usdCurr);
+promotion(res);
+
+//2.
+function test() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return
+  }
+  console.log("Done");
+}
+
+test();
+
+
+//3. функция всегда что-то возвращает. в данном случе андефайнд
+function doNothing() {};
+console.log(doNothing() === undefined);
+
+//4. DZ
+function sayHello(name) {
+  let result = (`Привет, ${name}!`);
+  console.log(result);
+  return result;
+}
+
+sayHello('Alex');
+
+let arr = [];
+
+function sayHello(num) {
+  for (let i = 0; i < 3; i++) {
+    arr[i] = num - 1;
+    num += 1;
+  }
+  console.log(arr);
+}
+
+sayHello(5);
+
+
+function getMathResult(base, repit) {
+  if (typeof(repit) !== 'number' || repit <= 0) {
+    return base;
+  }
+
+  let result = '';
+  
+    for (let i = 1; i <= repit; i++) {
+      if (i === repit) {
+        result = result + `${base * i}`;
+      } else {
+        result = result + `${base * i}` + "---";
+      }
+    }
+    console.log(result);
+    return result; 
+}
+
+getMathResult(5, 10);
+>>>>>>> 2d170541996cff37adc98af5bb55e935a601f5c3
