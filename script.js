@@ -253,3 +253,20 @@ if (personalMovieDB.count < 10) {
 
 
 console.log(personalMovieDB);
+
+
+//lesson 25
+
+const logg = "Hello world";
+
+console.log(logg.slice(6, 11));
+// console.log(logg.substring(6, 11));
+// console.log(logg.substr(6, 5));
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = "12.2px"
+console.log(parseInt(test));
+
+
