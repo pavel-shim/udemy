@@ -282,7 +282,6 @@ if (personalMovieDB.count < 10) {
 
 console.log(personalMovieDB);
 
-<<<<<<< HEAD
 
 //lesson 25
 
@@ -299,7 +298,6 @@ const test = "12.2px"
 console.log(parseInt(test));
 
 
-=======
 //lesson 25
 //1.
 const usdCurr = 28;
@@ -373,4 +371,17 @@ function getMathResult(base, repit) {
 }
 
 getMathResult(5, 10);
->>>>>>> 2d170541996cff37adc98af5bb55e935a601f5c3
+
+// lesson 25
+
+const logg = "Hello world";
+
+console.log(logg.slice(6, 11));
+// console.log(logg.substring(6, 11));
+// console.log(logg.substr(6, 5));
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = "12.2px"
+console.log(parseInt(test));
